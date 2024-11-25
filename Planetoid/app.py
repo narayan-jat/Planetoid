@@ -11,7 +11,7 @@ Date: 15 May, 2023
 """
 from consts import *
 from game2d import *
-from wave import *
+from wave1 import *
 import json
 
 # PRIMARY RULE: Planetoids can only access attributes in wave.py via getters/setters
@@ -256,15 +256,15 @@ class Planetoids(GameApp):
         '''
 
         # Problem here we are changing the self._message attribute by two ways
-        # 1. is by assigning it the same object type as earlier but creting new object of it.
-        self._message = GLabel(font_size = MESSAGE_SIZE, font_name = MESSAGE_FONT, x = GAME_WIDTH/ 2, 
-            y = GAME_HEIGHT / 2 + position, text = text)
+        # 1. is by assigning it the same object type as earlier but creating new object of it.
+        # self._message = GLabel(font_size = MESSAGE_SIZE, font_name = MESSAGE_FONT, x = GAME_WIDTH/ 2, 
+        #     y = GAME_HEIGHT / 2 + position, text = text)
         #2. by changing the content of the object type assigned to the 
         # self._message as follows:
-        # self._message.text = text
-        # self._message.x = GAME_WIDTH / 2
-        # self._message.y = GAME_HEIGHT / 2 + position
-        # self._message.draw(self.view)
+        self._message.text = text
+        self._message.x = GAME_WIDTH / 2
+        self._message.y = GAME_HEIGHT / 2 + position
+        self._message.draw(self.view)
 
         # Problem is that from both ways anyway content of the object assigned to 
         # self._message is changing but both are giving different results.

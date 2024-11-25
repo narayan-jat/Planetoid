@@ -17,8 +17,6 @@ In addition, you should have the following subfolders
 
 Moving any of these folders or files will prevent the game from working properly
 
-Author: Walker M. White (wmw2)
-Date:   November 1, 2017 (Python 3 Version)
 """
 from consts import *
 from app import *
